@@ -6,17 +6,17 @@ on:
   pull_request:
     branches:
     - master
-env:
-  GITHUB_RUNNER_VERSION:
+# env:
+#   GITHUB_RUNNER_VERSION:
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - name: Check out the repo
       uses: actions/checkout@v2
-    - name: Get GitHub Runner Version
-    - run: |
-        export GITHUB_RUNNER_VERSION=$(curl --silent "https://api.github.com/repos/actions/runner/releases/latest" | grep tag_name | sed -E 's/.*"v([^"]+)".*/\1/')}
+    # - name: Get GitHub Runner Version
+    # - run: |
+    #     export GITHUB_RUNNER_VERSION=$(curl --silent "https://api.github.com/repos/actions/runner/releases/latest" | grep tag_name | sed -E 's/.*"v([^"]+)".*/\1/')}
     - name: Build docker image for Ubuntu 20.04 amd64
-      run: docker build -f Dockerfile -t alexbocharov/github-runner:${GITHUB_RUNNER_VERSION}-focal .
+      run: docker build -f Dockerfile -t alexbocharov/github-runner:focal .
       working-directory: ./src/focal/amd64/
