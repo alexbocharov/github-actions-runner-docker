@@ -6,6 +6,8 @@ on:
   pull_request:
     branches:
     - master
+env:
+  GITHUB_RUNNER_VERSION: $(curl --silent "https://api.github.com/repos/actions/runner/releases/latest" | grep tag_name | sed -E 's/.*"v([^"]+)".*/\1/')
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,5 +15,5 @@ jobs:
     - name: Check out the repo
       uses: actions/checkout@v2
     - name: Build docker image for Ubuntu 20.04 LTS amd64
-      run: docker build -f Dockerfile -t alexbocharov/github-runner:$(curl --silent "https://api.github.com/repos/actions/runner/releases/latest" | grep tag_name | sed -E 's/.*"v([^"]+)".*/\1/')-focal .
+      run: docker build -f Dockerfile -t alexbocharov/github-runner:${{env.GITHUB_RUNNER_VERSION}}-focal .
       working-directory: ./src/focal/amd64/
