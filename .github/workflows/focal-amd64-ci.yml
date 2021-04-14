@@ -12,8 +12,6 @@ jobs:
     steps:
     - name: Check out the repo
       uses: actions/checkout@v2
-    - name: Build docker image for Ubuntu 20.04
-      run: |
-        #cd src/focal/amd64/ && /
-        docker build -f Dockerfile -t alexbocharov/github-runner:focal-dev .
+    - name: Build docker image for Ubuntu 20.04 amd64
+      run: docker build -f Dockerfile -t alexbocharov/github-runner:focal-dev .
       working-directory: ./src/focal/amd64/
