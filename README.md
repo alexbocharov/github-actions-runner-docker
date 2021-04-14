@@ -2,6 +2,12 @@
 
 Docker images for GitHub Actions Runner.
 
+## Build Status
+
+| Container Base | amd64 | arm64 |
+| -------------- | ----- | ----- |
+| ubuntu focal | [![focal-amd64-ci](https://github.com/alexbocharov/github-actions-runner-docker/actions/workflows/focal-amd64-ci.yml/badge.svg)](https://github.com/alexbocharov/github-actions-runner-docker/actions/workflows/focal-amd64-ci.yml) ||
+
 ## Environment variables
 
 The following environment variables allows you to control the configuration parameters.
