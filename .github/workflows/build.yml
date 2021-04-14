@@ -12,4 +12,4 @@ jobs:
     steps:
     - name: Build docker image for Ubuntu 20.04
       run: |
-        docker build -f ./src/focal/amd64/Dockerfile -t alexbocharov/github-runner:dev --output "type=image,push=true" --platform linux/amd64 .
+        docker build -f src/focal/amd64/Dockerfile -t alexbocharov/github-runner:dev --output "type=image,push=true" --platform linux/amd64 .
