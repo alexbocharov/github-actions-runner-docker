@@ -13,4 +13,4 @@ jobs:
     - name: Build docker image for Ubuntu 20.04
       run: |
         docker build -f Dockerfile -t alexbocharov/github-runner:focal-dev .
-      working-directory: src/focal/amd64
+      working-directory: src/focal/amd64/
