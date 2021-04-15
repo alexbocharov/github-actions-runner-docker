@@ -16,6 +16,13 @@ jobs:
     steps:
     - name: Check out the repo
       uses: actions/checkout@v2
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        username: ${{secrets.DOCKERHUB_USERNAME}}
+        password: ${{secrets.DOCKERHUB_PASSWORD}}
     - name: Build docker image for Ubuntu 20.04 LTS amd64
       run: docker build -f Dockerfile -t alexbocharov/github-runner:${{env.GITHUB_RUNNER_VERSION}}-focal .
       working-directory: ./src/focal/amd64/
+    - name: Deploy docker image for Linux
+      run: docker push alexbocharov/github-runner:${{env.GITHUB_RUNNER_VERSION}}-focal
