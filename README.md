@@ -1,5 +1,7 @@
 # GitHub Actions Runner 
 
+[![Docker Pulls](https://img.shields.io/docker/pulls/alexbocharov/github-runner.svg)](https://hub.docker.com/r/alexbocharov/github-runner) 
+
 Docker images for GitHub Actions Runner.
 
 ## Build Status
