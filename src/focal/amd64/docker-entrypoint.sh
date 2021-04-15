@@ -19,7 +19,7 @@ if [[ -z $RUNNER_WORK_DIRECTORY ]]; then
   export RUNNER_WORK_DIRECTORY="_work"
 fi
 
-if [[ -n $RUNNER_LABELS ]]; then
+if [[ -z $RUNNER_LABELS ]]; then
   echo "RUNNER_LABELS environment variable is nit set, using 'Default'."
   export RUNNER_LABELS="Default"
 fi
