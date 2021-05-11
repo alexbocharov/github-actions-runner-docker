@@ -17,6 +17,7 @@ Docker images for GitHub Actions Runner.
 | Tags | Architecture | Dockerfile | OS Version |
 | ---- | ------------ | ---------- | ---------- |
 | github-runner:2.277.1-focal | amd64 | [Dockerfile](./src/focal/amd64/Dockerfile) | Ubuntu 20.04 |
+| github-runner:2.278.0-focal | amd64 | [Dockerfile](./src/focal/amd64/Dockerfile) | Ubuntu 20.04 |
 
 ## Usage
 
