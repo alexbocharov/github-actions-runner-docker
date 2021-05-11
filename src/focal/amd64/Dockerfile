@@ -38,7 +38,9 @@ RUN GITHUB_RUNNER_VERSION=${GITHUB_RUNNER_VERSION:-$(curl --silent "https://api.
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
-COPY docker-entrypoint.sh /
+# Set entrypoint.
+COPY ./docker-entrypoint.sh /
+RUN chmod +x /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 CMD ["./bin/runsvc.sh"]
