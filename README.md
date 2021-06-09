@@ -34,7 +34,7 @@ docker run -d --restart always --name github-runner \
   -e RUNNER_LABELS="you-runner-labels,you-other-runner-labels" \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v /tmp:/tmp \
-  alexbocharov/github-runner:2.277.1-focal
+  alexbocharov/github-runner:2.278.0-focal
 ```
 
 To run GitHub Actions Runner container for repository, execute the command:
@@ -48,7 +48,7 @@ docker run -d --restart always --name github-runner \
   -e RUNNER_LABELS="you-runner-labels,you-other-runner-labels" \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v /tmp:/tmp \
-  alexbocharov/github-runner:2.277.1-focal
+  alexbocharov/github-runner:2.278.0-focal
 ```
 
 ## Environment variables
