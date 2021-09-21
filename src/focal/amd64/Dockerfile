@@ -16,7 +16,11 @@ ENV \
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
+        apt-transport-https \
+        ca-certificates \
         curl \
+        gnupg2 \
+        software-properties-common \
         git \
         wget \
         jq \
@@ -24,6 +28,22 @@ RUN apt-get update \
     && apt-get dist-upgrade -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+# Set up the repository for Docker Engine.
+RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+RUN apt-key fingerprint 0EBFCD88
+RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+# Install Docker Engine.
+RUN apt-get update \
+    && apt-get install -y docker-ce docker-ce-cli containerd.io \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Docker Compose
+RUN curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose \
+    && chmod +x /usr/local/bin/docker-compose \
+    && ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 RUN mkdir -p ${RUNNER_INSTALL_FOLDER} \
     && chmod -R 755 ${RUNNER_INSTALL_FOLDER}
