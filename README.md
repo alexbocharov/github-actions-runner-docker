@@ -50,7 +50,7 @@ docker run -d --restart always --name github-runner \
   -e RUNNER_LABELS="you-runner-labels,you-other-runner-labels" \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v /tmp:/tmp \
-  alexbocharov/github-runner:2.278.0-focal
+  alexbocharov/github-runner:${TAG}
 ```
 
 ## Environment variables
