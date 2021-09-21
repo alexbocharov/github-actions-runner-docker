@@ -19,6 +19,7 @@ Docker images for GitHub Actions Runner.
 | github-runner:2.277.1-focal | amd64 | [Dockerfile](./src/focal/amd64/Dockerfile) | Ubuntu 20.04 |
 | github-runner:2.278.0-focal | amd64 | [Dockerfile](./src/focal/amd64/Dockerfile) | Ubuntu 20.04 |
 | github-runner:2.279.0-focal | amd64 | [Dockerfile](./src/focal/amd64/Dockerfile) | Ubuntu 20.04 |
+| github-runner:2.283.1-focal | amd64 | [Dockerfile](./src/focal/amd64/Dockerfile) | Ubuntu 20.04 |
 
 ## Usage
 
@@ -35,7 +36,7 @@ docker run -d --restart always --name github-runner \
   -e RUNNER_LABELS="you-runner-labels,you-other-runner-labels" \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v /tmp:/tmp \
-  alexbocharov/github-runner:2.278.0-focal
+  alexbocharov/github-runner:${TAG}
 ```
 
 To run GitHub Actions Runner container for repository, execute the command:
