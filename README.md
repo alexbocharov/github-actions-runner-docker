@@ -2,7 +2,7 @@
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/alexbocharov/github-runner.svg)](https://hub.docker.com/r/alexbocharov/github-runner) 
 
-Docker images for GitHub Actions Runner.
+Docker images for GitHub Actions Runner include Docker CLI and Docker Compose (2.283.1+).
 
 ## Build Status
 
