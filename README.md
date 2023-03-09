@@ -20,6 +20,7 @@ Docker images for GitHub Actions Runner include Docker CLI and Docker Compose (2
 | github-runner:2.278.0-focal | amd64 | [Dockerfile](./src/focal/amd64/Dockerfile) | Ubuntu 20.04 |
 | github-runner:2.279.0-focal | amd64 | [Dockerfile](./src/focal/amd64/Dockerfile) | Ubuntu 20.04 |
 | github-runner:2.283.1-focal | amd64 | [Dockerfile](./src/focal/amd64/Dockerfile) | Ubuntu 20.04 |
+| github-runner:2.302.1-focal | amd64 | [Dockerfile](./src/focal/amd64/Dockerfile) | Ubuntu 20.04 |
 
 ## Usage
 
