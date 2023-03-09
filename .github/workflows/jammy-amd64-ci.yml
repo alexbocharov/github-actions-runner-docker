@@ -1,0 +1,28 @@
+name: jammy-amd64-ci
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+
+env:
+  GITHUB_RUNNER_VERSION: $(curl --silent "https://api.github.com/repos/actions/runner/releases/latest" | grep tag_name | sed -E 's/.*"v([^"]+)".*/\1/')
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out the repo
+      uses: actions/checkout@v2
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        username: ${{secrets.DOCKERHUB_USERNAME}}
+        password: ${{secrets.DOCKERHUB_PASSWORD}}
+    - name: Build docker image for Ubuntu 22.04 LTS amd64
+      run: docker build -f Dockerfile -t alexbocharov/github-runner:${{env.GITHUB_RUNNER_VERSION}}-jammy .
+      working-directory: ./src/jammy/amd64/
+    - name: Deploy docker image for Linux
+      run: docker push alexbocharov/github-runner:${{env.GITHUB_RUNNER_VERSION}}-jammy

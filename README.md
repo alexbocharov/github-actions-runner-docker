@@ -9,6 +9,7 @@ Docker images for GitHub Actions Runner include Docker CLI and Docker Compose (2
 | Container Base | amd64 |
 | -------------- | ----- |
 | ubuntu focal | [![focal-amd64-ci](https://github.com/alexbocharov/github-actions-runner-docker/actions/workflows/focal-amd64-ci.yml/badge.svg)](https://github.com/alexbocharov/github-actions-runner-docker/actions/workflows/focal-amd64-ci.yml) ||
+| ubuntu jammy | [![jammy-amd64-ci](https://github.com/alexbocharov/github-actions-runner-docker/actions/workflows/jammy-amd64-ci.yml/badge.svg)](https://github.com/alexbocharov/github-actions-runner-docker/actions/workflows/jammy-amd64-ci.yml) ||
 
 ## Full Tag Listing
 
@@ -21,6 +22,7 @@ Docker images for GitHub Actions Runner include Docker CLI and Docker Compose (2
 | github-runner:2.279.0-focal | amd64 | [Dockerfile](./src/focal/amd64/Dockerfile) | Ubuntu 20.04 |
 | github-runner:2.283.1-focal | amd64 | [Dockerfile](./src/focal/amd64/Dockerfile) | Ubuntu 20.04 |
 | github-runner:2.302.1-focal | amd64 | [Dockerfile](./src/focal/amd64/Dockerfile) | Ubuntu 20.04 |
+| github-runner:2.302.1-jammy | amd64 | [Dockerfile](./src/jammy/amd64/Dockerfile) | Ubuntu 22.04 |
 
 ## Usage
 
